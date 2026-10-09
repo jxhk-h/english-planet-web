@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英语星球 English Planet · 卡通英语学习乐园</title>
+<meta name="description" content="卡通风格英语学习网站：语法区、单词区（学前到考研 / 雅思）、文章区（儿童故事/科技/新闻）。">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>">
+<script>
+/* 运行时错误兜底：脚本出错时在 <html> 上留痕并由界面提示，不影响正常使用 */
+window.__errors = [];
+window.addEventListener("error", function (e) {
+  window.__errors.push((e.message || "error") + " @" + (e.filename || "").split("/").pop() + ":" + (e.lineno || 0));
+  document.documentElement.setAttribute("data-js-error", window.__errors.join(" | "));
+});
+</script>
+</head>
+<body>
+
+<!-- ============ 图标 / 吉祥物 雪碧图 ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mascot" viewBox="0 0 120 120">
+    <path d="M60 10 L73.5 45.4 L111.4 47.3 L81.9 71.1 L91.7 107.7 L60 87 L28.3 107.7 L38.1 71.1 L8.6 47.3 L46.5 45.4 Z"
+          fill="#FFD43B" stroke="#2F2A44" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="46" cy="58" r="4.6" fill="#2F2A44"/>
+    <circle cx="74" cy="58" r="4.6" fill="#2F2A44"/>
+    <circle cx="47.6" cy="56.2" r="1.7" fill="#FFFFFF"/>
+    <circle cx="75.6" cy="56.2" r="1.7" fill="#FFFFFF"/>
+    <path d="M48 70 Q60 82 72 70" fill="none" stroke="#2F2A44" stroke-width="4.2" stroke-linecap="round"/>
+    <circle cx="34" cy="69" r="5.2" fill="#FF8FA3" opacity=".7"/>
+    <circle cx="86" cy="69" r="5.2" fill="#FF8FA3" opacity=".7"/>
+  </symbol>
+  <symbol id="i-cloud" viewBox="0 0 120 70">
+    <path d="M28 62 Q6 62 6 46 Q6 32 22 30 Q24 12 44 12 Q58 12 64 24 Q68 18 78 18 Q96 18 98 34 Q114 36 114 48 Q114 62 96 62 Z"
+          fill="#FFFFFF" stroke="#2F2A44" stroke-width="4" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+
+<!-- ============ 开场 3 秒动画 ============ -->
+<div id="splash" role="status" aria-label="正在进入英语星球">
+  <div class="sp-sky">
+    <svg class="sp-cloud c1" viewBox="0 0 120 70"><use href="#i-cloud"/></svg>
+    <svg class="sp-cloud c2" viewBox="0 0 120 70"><use href="#i-cloud"/></svg>
+    <svg class="sp-cloud c3" viewBox="0 0 120 70"><use href="#i-cloud"/></svg>
+    <div class="sp-spark s1">✦</div>
+    <div class="sp-spark s2">✦</div>
+    <div class="sp-spark s3">✧</div>
+    <div class="sp-spark s4">✦</div>
+    <div class="sp-rocket">🚀</div>
+  </div>
+
+  <div class="sp-stage">
+    <svg class="sp-mascot" viewBox="0 0 120 120" aria-hidden="true"><use href="#i-mascot"/></svg>
+    <div class="sp-letters">
+      <span class="sp-letter l1">A</span>
+      <span class="sp-letter l2">B</span>
+      <span class="sp-letter l3">C</span>
+    </div>
+    <h1 class="sp-title"><span>英</span><span>语</span><span>星</span><span>球</span></h1>
+    <p class="sp-sub">English Planet · 语法 · 单词 · 文章</p>
+    <div class="sp-bar"><i></i></div>
+  </div>
+
+  <button id="skipSplash" class="sp-skip" type="button">跳过 ›</button>
+</div>
+
+<!-- ============ 主应用 ============ -->
+<div id="app" class="app">
+
+  <header class="topbar">
+    <a class="brand" href="#/home">
+      <svg class="brand-mascot" viewBox="0 0 120 120" aria-hidden="true"><use href="#i-mascot"/></svg>
+      <span class="brand-text">
+        <b>英语星球</b>
+        <i>English Planet</i>
+      </span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#/home" data-nav="home"><span class="nav-emoji">🏠</span>首页</a>
+      <a href="#/grammar" data-nav="grammar"><span class="nav-emoji">📚</span>语法区</a>
+      <a href="#/words" data-nav="words"><span class="nav-emoji">🎒</span>单词区</a>
+      <a href="#/dictate" data-nav="dictate"><span class="nav-emoji">✍️</span>默写区</a>
+      <a href="#/articles" data-nav="articles"><span class="nav-emoji">📖</span>文章区</a>
+      <a href="#/progress" data-nav="progress"><span class="nav-emoji">🏅</span>我的进度</a>
+    </nav>
+  </header>
+
+  <main id="view" class="view"></main>
+
+  <footer class="foot">
+    <div class="foot-in">
+      <svg class="foot-mascot" viewBox="0 0 120 120" aria-hidden="true"><use href="#i-mascot"/></svg>
+      <p><b>英语星球 · English Planet</b></p>
+      <p class="foot-tip">每天十分钟，语法、单词、文章各走一小步。点击 🔊 可以听发音。</p>
+    </div>
+  </footer>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="js/data-words.js"></script>
+<script src="js/data-words-2.js"></script>
+<script src="js/data-words-3.js"></script>
+<script src="js/data-words-4.js"></script>
+<script src="js/data-words-preschool.js"></script>
+<!-- 全量词表清单：7 个模块的超长词表（小学 776 / 初中 2677 / 高中 5384 / 四级 4544 /
+     六级 4342 / 考研 5047 / 雅思 5275 词）不在这里加载，进入对应模块时由 app.js 动态注入，
+     否则首屏要下载 7.7MB 的数据。清单只提供「词数 + 文件路径」，854 字节。 -->
+<script src="js/data-words-full-index.js"></script>
+<script src="js/data-grammar.js"></script>
+<script src="js/data-grammar-2.js"></script>
+<script src="js/data-grammar-3.js"></script>
+<script src="js/data-grammar-4.js"></script>
+<script src="js/data-grammar-5.js"></script>
+<script src="js/data-articles.js"></script>
+<script src="js/data-articles-2.js"></script>
+<script src="js/data-articles-3.js"></script>
+<script src="js/data-articles-4.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
